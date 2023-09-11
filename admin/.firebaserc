@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "fashion-duels---pomp"
+  },
+  "targets": {
+    "creepjs-admin-staging": {
+      "hosting": {
+        "admin": [
+          "creepjs-admin-backend"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}

@@ -1,0 +1,82 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap'); */
+
+/* h1{
+  font-family: 'Rubik Iso', cursive;
+}
+
+body{
+  background: aqua;
+} */
+
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  overflow-x: hidden !important;
+  font: inherit;
+  font-family: monospace!important;
+  vertical-align: baseline
+}
+
+header {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 2rem 0;
+  max-width: 750px;
+  margin: 0 auto;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav ul li {
+  display: inline;
+  margin-right: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+}
+
+.section {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.project {
+  margin-top: 20px;
+}
+
+.project img {
+  max-width: 100%;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.data{
+  max-width: 750px;
+  margin: 0 auto;
+  background: antiquewhite;
+  box-shadow: 0 0 0 0.25rem rgb(255 255 255 / 25%) !important;
+  border-radius: 10px;
+}
+
+strong{
+  font-size: 20px !important;
+  text-decoration-style: wavy !important;
+  text-transform: uppercase !important;
+}
