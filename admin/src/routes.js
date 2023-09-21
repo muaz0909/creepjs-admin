@@ -21,39 +21,37 @@ import UserProfile from "./views/users/UserProfile";
 import Dashboard from "./views/dashboard/Dashboard";
 
 var routes = [
-  {
-    path: "/index",
-    name: "Dashboard",
-    icon: "ni ni-album-2 text-red",
-    component: Dashboard,
-    layout: "/admin",
-    display: true
-  },
-  {
-    path: "/users",
-    name: "Manage Users",
-    icon: "fas fa-users text-red",
-    component: UsersIndex,
-    layout: "/admin",
-    display: true
-  },
-  {
-    path: "/user/view/:id",
-    name: "Show User",
-    icon: "ni ni-bullet-list-67 text-red",
-    component: UserProfile,
-    layout: "/admin",
-    display: false
-  },
-  {
-    path: "/login",
-    name: "Login",
-    icon: "ni ni-key-25 text-info",
-    component: Login,
-    layout: "/auth",
-    display: false
-  },
-
-
+    {
+        path: "/index",
+        name: "Dashboard",
+        icon: "ni ni-album-2 text-red",
+        component: Dashboard,
+        layout: "/admin",
+        display: true
+    },
+    {
+        path: "/users",
+        name: "Manage Users",
+        icon: "fas fa-users text-red",
+        component: UsersIndex,
+        layout: "/admin",
+        display: true
+    },
+    {
+        path: "/user/view/:id",
+        name: "Show User",
+        icon: "ni ni-bullet-list-67 text-red",
+        component: UserProfile,
+        layout: "/admin",
+        display: false
+    },
+    {
+        path: "/login",
+        name: "Login",
+        icon: "ni ni-key-25 text-info",
+        component: Login,
+        layout: "/auth",
+        display: false
+    }
 ];
 export default routes;

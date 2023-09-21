@@ -4,6 +4,8 @@ import React, {useEffect, useState} from "react";
 import {firestore, reformatArrayToString, reformatObjectToString} from "../../utils/constants";
 import {Link, useParams} from "react-router-dom";
 import {doc, getDoc} from "firebase/firestore";
+import { MapContainer, TileLayer, useMap } from 'react-leaflet'
+import Map from "../../components/Common/Map";
 
 function UserProfile(props) {
     const {id} = useParams();
@@ -88,14 +90,14 @@ function UserProfile(props) {
                                                             </div>
                                                             <div className="col-md-4">
                                                                 <div className="form-group mb-3">
-                                                                    <label>Confidence Score of Browser</label>
+                                                                    <label>Browser</label>
                                                                     <input
                                                                         className="form-control"
                                                                         disabled={true}
                                                                         type="text"
                                                                         maxLength="50"
                                                                         name="title"
-                                                                        value={userDetails?.confidence?.score}
+                                                                        value={userDetails?.browser}
                                                                         required
                                                                     />
                                                                 </div>
@@ -203,8 +205,15 @@ function UserProfile(props) {
                                                                     </div>
                                                                 </Col>
                                                             </Row>
-
+                                                            <Row>
+                                                                <Col sm={12}>
+                                                                    <Map
+                                                                        location={userDetails?.location?.loc?.split(',')}
+                                                                    />
+                                                                </Col>
+                                                            </Row>
                                                         </div>
+
                                                     </Row>
                                                     <Row>
                                                         <div className="col-sm-12">

@@ -28,6 +28,7 @@ var ps;
 
 const Sidebar = (props) => {
     const [collapseOpen, setCollapseOpen] = useState();
+    const [showLogo, setShowLogo] = useState(false);
     // verifies if routeName is the one active (in browser input)
     const activeRoute = (routeName) => {
         return props.location.pathname.indexOf(routeName) > -1 ? "active" : "";
@@ -110,11 +111,18 @@ const Sidebar = (props) => {
                 {/* Brand */}
                 {logo ? (
                     <NavbarBrand className="pt-0" {...navbarBrandProps}>
-                        <img
-                            alt={logo.imgAlt}
-                            className="navbar-brand-img"
-                            src={logo.imgSrc}
-                        />
+                        {
+                            showLogo ? (<img
+                                alt={logo.imgAlt}
+                                className="navbar-brand-img"
+                                src={logo.imgSrc}
+                            />) : null
+                        }
+                        {/*<img*/}
+                        {/*    alt={logo.imgAlt}*/}
+                        {/*    className="navbar-brand-img"*/}
+                        {/*    src={logo.imgSrc}*/}
+                        {/*/>*/}
                     </NavbarBrand>
                 ) : null}
                 {/* User */}

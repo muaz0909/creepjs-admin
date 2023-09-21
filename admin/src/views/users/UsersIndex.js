@@ -28,7 +28,7 @@ function UserLeaderboard() {
         }, {
             name: "City/Country", selector: (row) => row.location?.city+" / " + row.location?.country , sortable: true
         }, {
-            name: "Confidence Scores", selector: (row) => row.confidence?.score ?? "Not Available", sortable: true
+            name: "Browser", selector: (row) => row.browser ?? "Not Available", sortable: true
         },
         {
             name: "Devices", cell: (row) => (
@@ -50,7 +50,8 @@ function UserLeaderboard() {
         {
             name: "last Visit", cell: (row) =>
                 <span>{
-                    moment(row.created_at).format("DD-MM-YYYY hh:mm:ss A")
+                    moment(row.created_at * 1000).format("DD-MM-YYYY hh:mm:ss A")
+
                 }</span>
 
 

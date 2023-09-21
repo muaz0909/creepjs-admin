@@ -2,7 +2,7 @@ import FingerprintJS from '@fingerprintjs/fingerprintjs';
 import {useEffect, useState} from "react";
 import {
     checkMediaDevices,
-    db,
+    db, getBrowserInfo,
     getIpInfo,
     reformatArrayOfObjectsToString,
     reformatArrayToString
@@ -151,19 +151,20 @@ function App() {
                                 duration: result?.components?.webGlExtensions?.duration,
                             }
                         },
-                        confidence: {
-                            score: result?.confidence?.score, comment: result?.confidence?.comment,
-                        },
                         devicesInfo: {
                             ...mediaDevices
-                        },
-                        created_at: moment().unix(),
-                    }
+                        }
+                    },
+                    browser: getBrowserInfo() ? getBrowserInfo() : "Not Available",
+                    created_at: moment().unix(),
+                    confidence: {
+                        score: result?.confidence?.score, comment: result?.confidence?.comment,
+                    },
                 })
             }
 
             getUserHash().then(() => {
-                // console.log(userHash);
+                console.log(getBrowserInfo())
             });
         }
 

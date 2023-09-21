@@ -26,6 +26,7 @@ const Login = () => {
     const [errorMsg, setErrorMsg] = useState(null);
     const [loading, setLoading] = useState(false);
     const history = useHistory();
+    const [showLogo,setShowLogo]=useState(false)
 
     const loginHandler = async (e) => {
         e.preventDefault()
@@ -69,12 +70,21 @@ const Login = () => {
                 <Card className="bg-secondary shadow border-0">
                     <CardBody className="px-lg-5 py-lg-5">
                         <div className="text-center mb-5">
-                            <img
-                                style={{height: 100, width: 'auto'}}
-                                alt="..."
-                                className="auth-navbar-img img-fluid"
-                                src={require("../../assets/img/brand/logo.png")}
-                            />
+                            {
+                                showLogo ? <img
+                                    style={{height: 100, width: 'auto'}}
+                                    alt="..."
+                                    className="auth-navbar-img img-fluid"
+                                    src={require("../../assets/img/brand/logo.png")}
+                                /> : null
+
+                            }
+                            {/*<img*/}
+                            {/*    style={{height: 100, width: 'auto'}}*/}
+                            {/*    alt="..."*/}
+                            {/*    className="auth-navbar-img img-fluid"*/}
+                            {/*    // src={require("../../assets/img/brand/logo.png")}*/}
+                            {/*/>*/}
                         </div>
                         <div className="text-center text-muted mb-4">
                             <small>Sign in with Email and Password</small>
